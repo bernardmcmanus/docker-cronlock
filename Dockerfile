@@ -1,6 +1,6 @@
 # docker-cronlock
 #
-# VERSION   0.1.0
+# VERSION   0.1.1
 
 FROM ubuntu
 MAINTAINER Bernard McManus <bernard.mcmanus.iv@gmail.com>
@@ -12,4 +12,5 @@ RUN chmod +x /usr/bin/cronlock
 
 ADD ./entrypoint.sh /entrypoint.sh
 
-CMD ["/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["cron", "-f"]
